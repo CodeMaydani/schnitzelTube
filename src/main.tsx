@@ -7,9 +7,9 @@ import {
 import './index.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import ViewVideo from './pages/ViewVideo';
+import WatchVideo from './pages/ViewVideo';
 import NotFound from './pages/NotFound';
-import Layout from './components/Layout';
+import Layout from '@/components/layout/Layout';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/view/:id",
-        element: <ViewVideo />,
+        path: "/watch/:id",
+        element: <WatchVideo />,
       },
     ]
   },

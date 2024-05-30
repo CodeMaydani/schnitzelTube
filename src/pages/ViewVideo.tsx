@@ -1,7 +1,7 @@
-function ViewVideo() {
+function WatchVideo() {
     return (
         <div>ViewVideo</div>
     )
 }
 
-export default ViewVideo
+export default WatchVideo
