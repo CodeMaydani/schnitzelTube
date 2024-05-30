@@ -1,8 +1,11 @@
+import { LoginForm } from "@/components/LoginForm";
 
 function Login() {
   return (
-    <div>Login</div>
-  )
+    <div className="grid h-full place-items-center">
+      <LoginForm />
+    </div>
+  );
 }
 
-export default Login
+export default Login;
