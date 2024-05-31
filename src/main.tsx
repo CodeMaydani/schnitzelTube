@@ -8,6 +8,8 @@ import WatchVideo from "./pages/ViewVideo";
 import NotFound from "./pages/NotFound";
 import Layout from "@/components/layout/Layout";
 import { ThemeProvider } from "./components/theme-provider";
+import { AuthProvider } from "./contexts/AuthContext";
+import RequireAnonimus from "./pages/RequireAnominus";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <RequireAnonimus>
+            <Login />
+          </RequireAnonimus>
+        ),
       },
       {
         path: "/watch/:id",
@@ -36,7 +42,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider storageKey="vite-ui-theme">
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );

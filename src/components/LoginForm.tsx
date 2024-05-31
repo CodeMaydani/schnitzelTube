@@ -8,9 +8,20 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import { FormEvent, useState } from "react";
+import { Form, Link, useNavigate } from "react-router-dom";
 
 export function LoginForm() {
+  const { login } = useAuth();
+  const [name, setName] = useState("");
+  const navigation = useNavigate();
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
+    if (name) login({ name, id: "asdasd" });
+    navigation("/");
+  }
+
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
@@ -20,7 +31,7 @@ export function LoginForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
+        <Form className="grid gap-4" onSubmit={handleSubmit}>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -28,6 +39,8 @@ export function LoginForm() {
               type="email"
               placeholder="m@example.com"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="grid gap-2">
@@ -45,7 +58,7 @@ export function LoginForm() {
           <Button variant="outline" className="w-full">
             Login with Google
           </Button>
-        </div>
+        </Form>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
           <Link to="#" className="underline">

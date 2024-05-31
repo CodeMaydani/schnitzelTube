@@ -1,13 +1,13 @@
-import { Search } from "lucide-react"
-import { Input } from "../ui/input"
+import { Search } from "lucide-react";
+import { Input } from "../ui/input";
 
 function SearchBar() {
-    return (
-        <div className="relative">
-            <Search className="absolute top-2 left-2" />
-            <Input placeholder="search" className="pl-10 w-96" />
-        </div>
-    )
+  return (
+    <div className="relative w-full">
+      <Search className="absolute  left-2 top-2" />
+      <Input placeholder="search" className="w-full pl-10" />
+    </div>
+  );
 }
 
-export default SearchBar
+export default SearchBar;

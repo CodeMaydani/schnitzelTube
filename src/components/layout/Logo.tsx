@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link
       to={"/"}
-      className="flex gap-2 rounded-full bg-red-500 p-2 text-primary-foreground"
+      className="ml-auto flex w-min gap-2 rounded-full bg-red-500 p-2 text-primary-foreground"
     >
       <Video className="text-lg" />
       <p>SchnitzelTube</p>

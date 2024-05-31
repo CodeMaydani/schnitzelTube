@@ -1,9 +1,9 @@
-import { Button } from "../ui/button"
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "../ui/button";
 
 function Logout() {
-    return (
-        <Button>Logout</Button>
-    )
+  const { logout } = useAuth();
+  return <Button onClick={logout}>Logout</Button>;
 }
 
-export default Logout
+export default Logout;
