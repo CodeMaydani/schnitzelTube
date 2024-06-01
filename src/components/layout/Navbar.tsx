@@ -1,11 +1,10 @@
 import { useAuth } from "@/contexts/AuthContext";
-import { ModeToggle } from "../mode-toggle";
-import Logo from "./Logo";
-import Logout from "./Logout";
-import SearchBar from "./SearchBar";
-import UserAvatar from "./UserAvatar";
 import { Link } from "react-router-dom";
+import UserDropdownMenu from "../UserDropdownMenu";
+import { ModeToggle } from "../mode-toggle";
 import { buttonVariants } from "../ui/button";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
 function Navbar() {
   const { user } = useAuth();
@@ -14,14 +13,18 @@ function Navbar() {
       <nav className="grid h-16 grid-cols-3 items-center justify-between border-b-2 bg-accent p-4">
         <div className="flex items-center gap-2">
           {user ? (
-            <Logout />
+            <UserDropdownMenu />
           ) : (
-            <Link to={"login"} className={buttonVariants()}>
-              Login
+            <Link
+              to={"login"}
+              className={buttonVariants({
+                className: "gap-2",
+              })}
+            >
+              <p>Login</p>
             </Link>
           )}
           <ModeToggle />
-          <UserAvatar />
           <p>{user?.name}</p>
         </div>
         <SearchBar />

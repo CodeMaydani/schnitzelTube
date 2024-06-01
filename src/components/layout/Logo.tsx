@@ -1,14 +1,16 @@
-import { Video } from "lucide-react";
+import { Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Logo() {
   return (
     <Link
       to={"/"}
-      className="ml-auto flex w-min gap-2 rounded-full bg-red-500 p-2 text-primary-foreground"
+      className="ml-auto flex w-min items-center gap-1 rounded-full"
     >
-      <Video className="text-lg" />
-      <p>SchnitzelTube</p>
+      <div className="h-6 rounded-md bg-red-500 p-1 px-2">
+        <Play className="size-4 fill-white stroke-none" />
+      </div>
+      <p className="text-lg font-bold tracking-tighter">SchnitzelTube</p>
     </Link>
   );
 }

@@ -10,6 +10,7 @@ import Layout from "@/components/layout/Layout";
 import { ThemeProvider } from "./components/theme-provider";
 import { AuthProvider } from "./contexts/AuthContext";
 import RequireAnonimus from "./pages/RequireAnominus";
+import VideoUpload from "./pages/VideoUpload";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/video-upload",
+        element: <VideoUpload />,
       },
       {
         path: "/login",
