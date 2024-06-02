@@ -18,7 +18,7 @@ const { name, subs } = { name: "Lorem ipsum", subs: 12312 };
 function WatchVideo() {
   return (
     <div>
-      <div className="mb-8 bg-black">
+      <div className="mb-4 bg-black">
         <div className="container">
           <VideoPlayer />
         </div>
